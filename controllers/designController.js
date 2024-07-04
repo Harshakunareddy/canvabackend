@@ -17,10 +17,12 @@ class designController {
         try {
 
             cloudinary.config({
-                cloud_name: process.env.cloud_name,
-                api_key: process.env.api_key,
-                api_secret: process.env.api_secret,
+                cloud_name: "du7mlx84s",
+                api_key: "712949938572545",
+                api_secret: "EKT3JgrT2CitYGQA0cAgGzSxeTs",
             })
+
+
             const [fields, files] = await form.parse(req);
             const { image } = files
             const { url } = await cloudinary.uploader.upload(image[0].filepath)
