@@ -1,15 +1,15 @@
-import axios from 'axios'
-const local_api = 'http://localhost:5000'
-const production_api = ''
+import axios from 'axios';
 
-const token = localStorage.getItem('canva_token')
+const production_api = 'https://canvabackend-ao4g.onrender.com';
+
+const token = localStorage.getItem('canva_token');
 
 const api = axios.create({
     baseURL: production_api,
     headers: {
-        'Authorization': token ? `Bearer ${token}` : ""
+        'Authorization': token ? `Bearer ${token}` : ''
     },
-    withCredentials: true
-})
+    withCredentials: true  // This is used for sending cookies along with the request
+});
 
-export default api
+export default api;
